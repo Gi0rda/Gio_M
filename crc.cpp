@@ -2,156 +2,164 @@
 #include <cstdlib>
 #include <stdlib.h>
 #include <time.h>
-#include <windows.h>
 using namespace std;
 
-void stampa_bit(int &ndibit, int bit[]){
-cout<<"\nquesta e' la sequenza di bit attuale: ";
+void sequenza_b(int &nb, int b[]){
+cout<<"\nLa sequenza di bit e': ";
 
-for(int i=0; i<ndibit; i++){
-cout<<bit[i];
+for(int i=0; i<nb; i++){
+cout<<b[i];
 }
 }
 
-void riscrittura(int bit[],int &ndibit)
+void funz_risc(int b[],int &nb)
 {
 int i=0;
 
-        if(bit[i]==0){
-       
-        cout<<"\n------------bit prima del found 0--------";
-        stampa_bit(ndibit, bit);
-HANDLE h= GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(h,4);
-    cout<<"-Found 0-";
-    SetConsoleTextAttribute(h,15);
+        if(b[i]==0)
+{
         int j;
-        for(int i=0; i<ndibit; i++){
+        for(int i=0; i<nb; i++)
+{
         j=i+1;
-        bit[i]=bit[j];
+        b[i]=b[j];
 i=i+1;
 }
 
-  }            
-        ndibit=ndibit-1;
-stampa_bit(ndibit, bit);
+}            
+    nb=nb-1;
+sequenza_b(nb, b);
 
 }
- 
-int ndibit;
 
-int main(){
-HANDLE h= GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(h,15);  
-int m=0;
-int gx[m];
+int nb;
+
+int main()
+{
+ 
+int p=0;
+int gx[p];
 int scelta_divisore;
 int a;
-cout<<"scegli quanti bit generare (da 8 a 32) : ";
-cin>>ndibit;
+cout<<"Quanti bit si vogliono generare? (da 8 a 32) : ";
+cin>>nb;
 
-while(ndibit<8 || ndibit>32){
-cout<<"numero inserito invalido, riprova :";
-cin>>ndibit;
+while(nb<8 || nb>32)
+{
+cout<<"Il numero inserito non è invalido, reinserirlo :";
+cin>>nb;
 }
 
 
-cout<<"Scegli il divisore--\n\n1]1001\n\n2]101\n\n:";
+cout<<"\n\n-1 1001\n\n-2 101\n\n:";
 cin>>scelta_divisore;
 
-while(scelta_divisore!=1 && scelta_divisore!=2){
+while(scelta_divisore!=1 && scelta_divisore!=2)
+{
 cout<<"numero inserito invalido, riprova :";
 cin>>scelta_divisore;
 }
 
-int bit[ndibit];
+int b[nb];
 
 srand (time(NULL));
 
-cout<<"numero di bit: "<<ndibit<<endl;
+cout<<"Il numero dei bit e': "<<nb<<endl;
 
 
-for(int i=0; i<ndibit; i++){
+for(int i=0; i<nb; i++)
+{
 int a=rand() % 2;
-bit[i] = a;
+b[i] = a;
 }
 
-stampa_bit(ndibit, bit);
-if(scelta_divisore==1){
-cout<<"\n\nil divisore e': 1001";
-m=4;
-gx[m];
+sequenza_b(nb, b);
+if(scelta_divisore==1)
+{
+cout<<"\n\nIl divisore e': 1001";
+p=4;
+gx[p];
 gx[0]=1;
 gx[1]=0;
 gx[2]=0;
 gx[3]=1;
 
-ndibit=ndibit+3;
-bit[ndibit];
-bit[ndibit-1]=0;
-bit[ndibit-2]=0;
-bit[ndibit-3]=0;
-stampa_bit(ndibit, bit);
-}else if(scelta_divisore==2){
-cout<<"\n\nil divisore e': 101";
-gx[m];
-m=3;
+nb=nb+3;
+b[nb];
+b[nb-1]=0;
+b[nb-2]=0;
+b[nb-3]=0;
+sequenza_b(nb, b);
+}
+else if(scelta_divisore==2)
+{
+cout<<"\n\nIl divisore e': 101";
+gx[p];
+p=3;
 gx[0]=1;
 gx[1]=0;
 gx[2]=1;
 
-ndibit=ndibit+2;
-bit[ndibit];
-bit[ndibit-1]=0;
-bit[ndibit-2]=0;
-stampa_bit(ndibit, bit);
+nb=nb+2;
+b[nb];
+b[nb-1]=0;
+b[nb-2]=0;
+sequenza_b(nb, b);
 }
 
 
 cout<<"\n\nmx: ";
-for(int i=0, h = m ; h>=0, i<m; h--, i++){
-if(h<2){
-if (gx[i]==1){
+for(int i=0, h = p ; h>=0, i<p; h--, i++)
+{
+if(h<2)
+{
+if (gx[i]==1)
+{
 cout<<"1";
 }
 }
 else if (h>1)
 {
-if (gx[i]==1){
+if (gx[i]==1)
+{
 cout<<"x^"<<h-1<<"+";
 
 }
 }
 }
+
+
     bool loop=true;
 
-for(int i=0, h=m; loop=true; i++, h--){
+for(int i=0, h=p; loop=true; i++, h--)
+{
 
-if(ndibit<=3){
-            cout<<"\n\n-----------RISULTATO FINALE--------";
-            riscrittura(bit, ndibit);
-return 0;
-           
+if(nb<=3)
+{
+        cout<<"\n\n-----------RISULTATO FINALE--------";
+        funz_risc(b, nb);
+return 0;        
 }
 
-if(h==-1){
-
-h=m;
+if(h==-1)
+{
+h=p;
 }
-     
-cout<<"\n\nrisultato tra :"<<bit[i]<<" e ";
+cout<<"\n\nrisultato tra :"<<b[i]<<" e ";
+
 cout<<gx[h]<<" = ";
-if (bit[i] == gx[h]){
-bit[i] = 0;
-}else {
-bit[i]=1;
+
+if (b[i] == gx[h])
+{
+b[i] = 0;
 }
- cout<<bit[i];
-        riscrittura(bit, ndibit);
+else
+{
+b[i]=1;
+}
+cout<<b[i];
+    funz_risc(b, nb);
+}
 }
 
 
-
-
-
-}
