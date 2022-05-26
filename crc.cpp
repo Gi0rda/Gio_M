@@ -31,36 +31,13 @@ HANDLE h= GetStdHandle(STD_OUTPUT_HANDLE);
         bit[i]=bit[j];
 i=i+1;
 }
-/*        while(i<ndibit)
-{
-j=i+1;
-bit[i]=bit[j];
-i=i+1;
-}  
- */  
+
   }            
         ndibit=ndibit-1;
 stampa_bit(ndibit, bit);
 
 }
-   
-
-
-    //PRIMA TRASFORMO I PRIMI 4 POI LI VERIFICO E SE TROVO L 1 RIPRENDO DA LI
-
-
-
-/* riparte_da_uno(int bit[], int ndibit){
-int posizione;
-riscrittura(bit, ndibit);
-for(int i=0; i<ndibit; i++){
-if(bit[i]==1){
-posizione=i;
-return posizione;
-}
-}
-}
-*/
+ 
 int ndibit;
 
 int main(){
@@ -146,12 +123,6 @@ cout<<"x^"<<h-1<<"+";
 }
 }
 }
-
-//aggiunta 000 al bit perche' il gx e' 1001
-// int posizione=0;
-
-
-// int traguardo=ndibit-2;
     bool loop=true;
 
 for(int i=0, h=m; loop=true; i++, h--){
@@ -162,13 +133,9 @@ if(ndibit<=3){
 return 0;
            
 }
-/* if(posizione!=0){
-i=posizione;
-cout<<"\n-----------------nuovo inizio--------------------------------";
-}
-*/
+
 if(h==-1){
-//i=riparte_da_uno(bit, ndibit);
+
 h=m;
 }
      
@@ -179,10 +146,7 @@ bit[i] = 0;
 }else {
 bit[i]=1;
 }
-/* if(bit[i]==1){
-posizione=i;
-}
-*/ cout<<bit[i];
+ cout<<bit[i];
         riscrittura(bit, ndibit);
 }
 
