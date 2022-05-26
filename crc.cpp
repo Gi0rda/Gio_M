@@ -2,129 +2,192 @@
 #include <cstdlib>
 #include <stdlib.h>
 #include <time.h>
+#include <windows.h>
 using namespace std;
 
+void stampa_bit(int &ndibit, int bit[]){
+cout<<"\nquesta e' la sequenza di bit attuale: ";
 
-void sequenza_b(int &nb, int b[]){
-    cout<<"\nI bit generati sono: ";
-    for(int i=0; i<nb; i++){
-        cout<<b[i];
-    }
+for(int i=0; i<ndibit; i++){
+cout<<bit[i];
+}
 }
 
-void funz_risc(int b[],int &nb)
-    {   
-        int i=0;
-        
-        if(b[i]=! 1){
+void riscrittura(int bit[],int &ndibit)
+{
+int i=0;
+
+        if(bit[i]==0){
+       
+        cout<<"\n------------bit prima del found 0--------";
+        stampa_bit(ndibit, bit);
+HANDLE h= GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(h,4);
+    cout<<"-Found 0-";
+    SetConsoleTextAttribute(h,15);
         int j;
-        while(i<nb)
-        {
+        for(int i=0; i<ndibit; i++){
         j=i+1;
-        b[i]=b[j];
-        i=i+1;
-        }                
-        }
+        bit[i]=bit[j];
+i=i+1;
+}
+/*        while(i<ndibit)
+{
+j=i+1;
+bit[i]=bit[j];
+i=i+1;
+}  
+ */  
+  }            
+        ndibit=ndibit-1;
+stampa_bit(ndibit, bit);
 
-        nb=nb-1;
-        sequenza_b(nb, b);
-    }
+}
+   
 
 
-  restart(int b[], int nb){
-        int v_pos;
-        funz_risc(b, nb);
-        for(int i=0; i<nb; i++){
-            if(b[i]==1){
-                v_pos=i;
-                return v_pos;
-            }
-        }
-    }
+    //PRIMA TRASFORMO I PRIMI 4 POI LI VERIFICO E SE TROVO L 1 RIPRENDO DA LI
 
-int nb;
+
+
+/* riparte_da_uno(int bit[], int ndibit){
+int posizione;
+riscrittura(bit, ndibit);
+for(int i=0; i<ndibit; i++){
+if(bit[i]==1){
+posizione=i;
+return posizione;
+}
+}
+}
+*/
+int ndibit;
 
 int main(){
-	
-	
-	int app;
-	cout<<"Selezioanare un numero di bit da generare (da 8 a 32): ";
-	cin>>nb;
-	
-	while(nb<8 || nb>32){
-        cout<<"numero inserito invalido, riprova :";
-        cin>>nb;
-    }
-		
-	int b[nb];
-	srand (time(NULL));
-	
-	cout<<"Il numero di bit e': "<<nb<<endl;
+HANDLE h= GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(h,15);  
+int m=0;
+int gx[m];
+int scelta_divisore;
+int a;
+cout<<"scegli quanti bit generare (da 8 a 32) : ";
+cin>>ndibit;
 
-	
-	for(int i=0; i<nb; i++){
-	int app=rand() % 2;
-	b[i] = app;
-	}
-
-	sequenza_b(nb, b);
-	
-	int r=4;
-	int Gx[r];
-	Gx[0]=1;
-	Gx[1]=1;
-	Gx[2]=0;
-	Gx[3]=1;
-	
-	cout<<"\n\nmx: ";
-	for(int i=0, P = nb ; P>=0, i<nb; P--, i++){
-		if (b[i]==1){
-			cout<<"x^"<<P-1<<"+";
-		}
-	}
-	
-	nb=nb+3;
-    
-
-    b[nb];
-    b[nb]=0;
-    b[nb-1]=0;
-    b[nb-2]=0;
-  int v_pos=0;
+while(ndibit<8 || ndibit>32){
+cout<<"numero inserito invalido, riprova :";
+cin>>ndibit;
+}
 
 
-  int var_fine=nb-2;
+cout<<"Scegli il divisore--\n\n1]1001\n\n2]101\n\n:";
+cin>>scelta_divisore;
+
+while(scelta_divisore!=1 && scelta_divisore!=2){
+cout<<"numero inserito invalido, riprova :";
+cin>>scelta_divisore;
+}
+
+int bit[ndibit];
+
+srand (time(NULL));
+
+cout<<"numero di bit: "<<ndibit<<endl;
+
+
+for(int i=0; i<ndibit; i++){
+int a=rand() % 2;
+bit[i] = a;
+}
+
+stampa_bit(ndibit, bit);
+if(scelta_divisore==1){
+cout<<"\n\nil divisore e': 1001";
+m=4;
+gx[m];
+gx[0]=1;
+gx[1]=0;
+gx[2]=0;
+gx[3]=1;
+
+ndibit=ndibit+3;
+bit[ndibit];
+bit[ndibit-1]=0;
+bit[ndibit-2]=0;
+bit[ndibit-3]=0;
+stampa_bit(ndibit, bit);
+}else if(scelta_divisore==2){
+cout<<"\n\nil divisore e': 101";
+gx[m];
+m=3;
+gx[0]=1;
+gx[1]=0;
+gx[2]=1;
+
+ndibit=ndibit+2;
+bit[ndibit];
+bit[ndibit-1]=0;
+bit[ndibit-2]=0;
+stampa_bit(ndibit, bit);
+}
+
+
+cout<<"\n\nmx: ";
+for(int i=0, h = m ; h>=0, i<m; h--, i++){
+if(h<2){
+if (gx[i]==1){
+cout<<"1";
+}
+}
+else if (h>1)
+{
+if (gx[i]==1){
+cout<<"x^"<<h-1<<"+";
+
+}
+}
+}
+
+//aggiunta 000 al bit perche' il gx e' 1001
+// int posizione=0;
+
+
+// int traguardo=ndibit-2;
     bool loop=true;
 
-    for(int i=0, P=3; r=true; i++, P--){
-        
-        if(nb<=4){
-            cout<<"\n-----------RISULTATO--------";
-            funz_risc(b, nb);
-            return 0;
-            
-        }
-       if(v_pos!=0){
-            i=v_pos;
-            	cout<<"\n-------------passaggio successivo---------------";
-        }
+for(int i=0, h=m; loop=true; i++, h--){
 
-        if(P==-1){
-            i=restart(b, nb);
-            P=3;
-        }
+if(ndibit<=3){
+            cout<<"\n\n-----------RISULTATO FINALE--------";
+            riscrittura(bit, ndibit);
+return 0;
+           
+}
+/* if(posizione!=0){
+i=posizione;
+cout<<"\n-----------------nuovo inizio--------------------------------";
+}
+*/
+if(h==-1){
+//i=riparte_da_uno(bit, ndibit);
+h=m;
+}
      
-        cout<<"\n\nrisultato tra :"<<b[i]<<" e ";
-        cout<<Gx[P]<<" = ";
-        if (b[i] == Gx[P]){
-            b[i] = 0;
-        }else {
-        b[i]=1;
-        }
-        if(b[i]==1){
-            v_pos=i;
-        }
-       cout<<b[i];
-        funz_risc(b, nb);
-    }
+cout<<"\n\nrisultato tra :"<<bit[i]<<" e ";
+cout<<gx[h]<<" = ";
+if (bit[i] == gx[h]){
+bit[i] = 0;
+}else {
+bit[i]=1;
+}
+/* if(bit[i]==1){
+posizione=i;
+}
+*/ cout<<bit[i];
+        riscrittura(bit, ndibit);
+}
+
+
+
+
+
 }
