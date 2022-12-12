@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <fcntl.h>
 #include <stdlib.h>
+#include <unistd.h>
+
 int main(){
 	int status;
 	int pid = fork();
