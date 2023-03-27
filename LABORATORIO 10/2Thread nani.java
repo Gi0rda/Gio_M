@@ -12,8 +12,8 @@ class contatoreNani2 extends Thread {
 
 class ProvaNani2{
     public static void main (String args[]){
-        Thread thr1 = new ContatoreNani2("tuzia");
-        Thread thr2 = new ContatoreNani2("tumadre");
+        Thread thr1 = new ContatoreNani2("gigi");
+        Thread thr2 = new ContatoreNani2("gart");
         thr1.start();
         thr2.start();
     }
