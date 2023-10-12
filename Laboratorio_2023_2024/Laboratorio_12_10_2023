@@ -1,0 +1,1048 @@
+PHP HOME
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+echo "Hello World";
+?>
+
+</body>
+</html>
+
+PHP INSTALL
+<?php
+$txt = "PHP";
+echo "I love $txt!";
+?>
+I love PHP!
+
+PHP Syntax
+1) <!DOCTYPE html>
+<html>
+<body>
+
+<h1>My first PHP page</h1>
+
+<?php
+echo "Hello World!";
+?> 
+
+</body>
+</html>
+My first PHP page
+Hello World!
+
+2) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+ECHO "Hello World!<br>";
+echo "Hello World!<br>";
+EcHo "Hello World!<br>";
+?> 
+
+</body>
+</html>
+Hello World!
+Hello World!
+Hello World!
+
+3) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$color = "red";
+echo "My car is " . $color . "<br>";
+echo "My house is " . $COLOR . "<br>";
+echo "My boat is " . $coLOR . "<br>";
+?>
+
+</body>
+</html>
+My car is red
+My house is
+My boat is
+
+PHP Comments
+1) <!DOCTYPE html>
+<html>
+<body>
+ 
+<?php
+/*
+This is a multiple-lines comment block
+that spans over multiple
+lines
+*/
+?>
+ 
+</body>
+</html>
+
+2) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+/*
+This is a multiple-lines comment block
+that spans over multiple
+lines
+*/
+?>
+
+</body>
+</html>
+
+3) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+/*
+This is a multiple-lines comment block
+that spans over multiple
+lines
+*/
+?>
+
+</body>
+</html>
+10
+
+PHP variables
+1) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$txt = "Hello world!";
+$x = 5;
+$y = 10.5;
+
+echo $txt;
+echo "<br>";
+echo $x;
+echo "<br>";
+echo $y;
+?>
+
+</body>
+</html>
+Hey
+Hello world!
+5
+10.5
+
+2) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$txt = "W3Schools.com";
+echo "I love $txt!";
+?>
+
+</body>
+</html>
+I love W3Schools.com!
+
+3) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$txt = "W3Schools.com";
+echo "I love " . $txt . "!";
+?>
+
+</body>
+</html>
+I love W3Schools.com!
+
+4) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$x = 5;
+$y = 4;
+echo $x + $y;
+?>
+
+</body>
+</html>
+9
+
+PHP Echo/Print
+1) <!DOCTYPE html>
+<html>
+<body>
+<?php
+echo "<h2>PHP is Fun!</h2>";
+echo "Hello world!<br>";
+echo "I'm about to learn PHP!<br>";
+echo "This ", "string ", "was ", "made ", "with multiple parameters.";
+?>
+</body>
+</html>
+PHP is Fun!
+Hello world!
+I'm about to learn PHP!
+This string was made with multiple parameters.
+
+2) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$txt1 = "Learn PHP";
+$txt2 = "W3Schools.com";
+$x = 5;
+$y = 4;
+
+echo "<h2>" . $txt1 . "</h2>";
+echo "Study PHP at " . $txt2 . "<br>";
+echo $x + $y;
+?>
+
+</body>
+</html>
+Learn PHP
+Study PHP at W3Schools.com
+9
+
+3) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+print "<h2>PHP is Fun!</h2>";
+print "Hello world!<br>";
+print "I'm about to learn PHP!";
+?> 
+
+</body>
+</html>
+PHP is Fun!
+Hello world!
+I'm about to learn PHP!
+
+4) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$txt1 = "Learn PHP";
+$txt2 = "W3Schools.com";
+$x = 5;
+$y = 4;
+
+print "<h2>" . $txt1 . "</h2>";
+print "Study PHP at " . $txt2 . "<br>";
+print $x + $y;
+?>
+
+</body>
+</html>
+
+Learn PHP
+Study PHP at W3Schools.com
+9
+
+PHP Data Types
+1) <!DOCTYPE html>
+<html>
+<body>
+
+<?php 
+$x = "Hello world!";
+$y = 'Hello world!';
+
+echo $x;
+echo "<br>"; 
+echo $y;
+?>
+
+</body>
+</html>
+Hello world!
+Hello world!
+
+2) <!DOCTYPE html>
+<html>
+<body>
+
+<?php  
+$x = 5985;
+var_dump($x);
+?>  
+
+</body>
+</html>
+int(5985)
+
+3) <!DOCTYPE html>
+<html>
+<body>
+
+<?php  
+$x = 10.365;
+var_dump($x);
+?>  
+
+</body>
+</html>
+float(10.365)
+
+4) <!DOCTYPE html>
+<html>
+<body>
+
+<?php  
+$cars = array("Volvo","BMW","Toyota");
+var_dump($cars);
+?>  
+
+</body>
+</html>
+array(3) {
+  [0]=>
+  string(5) "Volvo"
+  [1]=>
+  string(3) "BMW"
+  [2]=>
+  string(6) "Toyota"
+}
+
+5) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+class Car {
+  public $color;
+  public $model;
+  public function __construct($color, $model) {
+    $this->color = $color;
+    $this->model = $model;
+  }
+  public function message() {
+    return "My car is a " . $this->color . " " . $this->model . "!";
+  }
+}
+
+$myCar = new Car("black", "Volvo");
+echo $myCar -> message();
+echo "<br>";
+$myCar = new Car("red", "Toyota");
+echo $myCar -> message();
+?>
+
+</body>
+</html>
+My car is a black Volvo!
+My car is a red Toyota!
+
+6) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$x = "Hello world!";
+$x = null;
+var_dump($x);
+?>
+
+</body>
+</html>
+NULL
+
+PHP String
+1) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+echo strlen("Hello world!");
+?> 
+ 
+</body>
+</html>
+12
+
+2) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+echo str_word_count("Hello world!");
+?> 
+ 
+</body>
+</html>
+2
+
+3) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+echo strrev("Hello world!");
+?> 
+ 
+</body>
+</html>
+!dlrow olleH
+
+4) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+echo strpos("Hello world!", "world");
+?> 
+ 
+</body>
+</html>
+6
+
+5) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+echo str_replace("world", "Dolly", "Hello world!");
+?> 
+ 
+</body>
+</html>
+Hello Dolly!
+
+PHP Constans
+1) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+// case-sensitive constant name
+define("GREETING", "Welcome to W3Schools.com!");
+echo GREETING;
+?> 
+
+</body>
+</html>
+Welcome to W3Schools.com!
+
+2) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+// case-insensitive constant name
+define("GREETING", "Welcome to W3Schools.com!", true);
+echo greeting;
+?> 
+
+</body>
+</html>
+Welcome to W3Schools.com!
+
+3) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+define("cars", [
+  "Alfa Romeo",
+  "BMW",
+  "Toyota"
+]);
+echo cars[0];
+?> 
+
+</body>
+</html>
+Alfa Romeo
+
+4) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+define("GREETING", "Welcome to W3Schools.com!");
+
+function myTest() {
+  echo GREETING;
+}
+ 
+myTest();
+?> 
+
+</body>
+</html>
+Welcome to W3Schools.com!
+
+
+PHP if ...else...elseif Statements
+1) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$t = date("H");
+
+if ($t < "20") {
+  echo "Have a good day!";
+}
+?>
+ 
+</body>
+</html>
+Have a good day!
+
+2) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$t = date("H");
+
+if ($t < "20") {
+  echo "Have a good day!";
+} else {
+  echo "Have a good night!";
+}
+?>
+ 
+</body>
+</html>
+Have a good day!
+
+3) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$t = date("H");
+echo "<p>The hour (of the server) is " . $t; 
+echo ", and will give the following message:</p>";
+
+if ($t < "10") {
+  echo "Have a good morning!";
+} elseif ($t < "20") {
+  echo "Have a good day!";
+} else {
+  echo "Have a good night!";
+}
+?>
+ 
+</body>
+</html>
+The hour (of the server) is 10, and will give the following message:
+Have a good day!
+
+PHP Switch Statement
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$favcolor = "red";
+
+switch ($favcolor) {
+  case "red":
+    echo "Your favorite color is red!";
+    break;
+  case "blue":
+    echo "Your favorite color is blue!";
+    break;
+  case "green":
+    echo "Your favorite color is green!";
+    break;
+  default:
+    echo "Your favorite color is neither red, blue, nor green!";
+}
+?>
+ 
+</body>
+</html>
+Your favorite color is red!
+
+PHP while Loop
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php  
+$x = 1;
+ 
+while($x <= 5) {
+  echo "The number is: $x <br>";
+  $x++;
+} 
+?>  
+
+</body>
+</html>
+The number is: 1
+The number is: 2
+The number is: 3
+The number is: 4
+The number is: 5
+
+PHP Functions
+1) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+function writeMsg() {
+  echo "Hello world!";
+}
+
+writeMsg();
+?>
+
+</body>
+</html>
+Hello world!
+
+2) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+function familyName($fname) {
+  echo "$fname Refsnes.<br>";
+}
+
+familyName("Jani");
+familyName("Hege");
+familyName("Stale");
+familyName("Kai Jim");
+familyName("Borge");
+?>
+
+</body>
+</html>
+Jani Refsnes.
+Hege Refsnes.
+Stale Refsnes.
+Kai Jim Refsnes.
+Borge Refsnes.
+
+3) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+function familyName($fname, $year) {
+  echo "$fname Refsnes. Born in $year <br>";
+}
+
+familyName("Hege","1975");
+familyName("Stale","1978");
+familyName("Kai Jim","1983");
+?>
+
+</body>
+</html>
+Hege Refsnes. Born in 1975
+Stale Refsnes. Born in 1978
+Kai Jim Refsnes. Born in 1983
+
+4) <?php
+function addNumbers(int $a, int $b) {
+  return $a + $b;
+}
+echo addNumbers(5, "5 days"); 
+// since strict is NOT enabled "5 days" is changed to int(5), and it will return 10
+?>
+10
+
+5) <?php declare(strict_types=1); // strict requirement
+
+function addNumbers(int $a, int $b) {
+  return $a + $b;
+}
+echo addNumbers(5, "5 days"); 
+// since strict is enabled and "5 days" is not an integer, an error will be thrown
+?>
+PHP Fatal error: Uncaught TypeError: Argument 2 passed to addNumbers() must be of the type integer, string given, called in /home/bWN0Ml/prog.php on line 6 and defined in /home/bWN0Ml/prog.php:3 Stack trace: #0 /home/bWN0Ml/prog.php(6): addNumbers(5, '5 days') #1 {main} thrown in /home/bWN0Ml/prog.php on line 3
+
+6) <?php declare(strict_types=1); // strict requirement ?>
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+function setHeight(int $minheight = 50) {
+  echo "The height is : $minheight <br>";
+}
+
+setHeight(350);
+setHeight();
+setHeight(135);
+setHeight(80);
+?>
+
+</body>
+</html>
+The height is : 350
+The height is : 50
+The height is : 135
+The height is : 80
+
+7) <?php declare(strict_types=1); // strict requirement ?>
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+function sum(int $x, int $y) {
+  $z = $x + $y;
+  return $z;
+}
+
+echo "5 + 10 = " . sum(5,10) . "<br>";
+echo "7 + 13 = " . sum(7,13) . "<br>";
+echo "2 + 4 = " . sum(2,4);
+?>
+
+</body>
+</html>
+5 + 10 = 15
+7 + 13 = 20
+2 + 4 = 6
+
+8) <?php declare(strict_types=1); // strict requirement
+function addNumbers(float $a, float $b) : float {
+  return $a + $b;
+}
+echo addNumbers(1.2, 5.2); 
+?>
+6.4
+
+9) <?php declare(strict_types=1); // strict requirement
+function addNumbers(float $a, float $b) : int {
+  return (int)($a + $b);
+}
+echo addNumbers(1.2, 5.2); 
+?>
+6
+
+10) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+function add_five(&$value) {
+  $value += 5;
+}
+
+$num = 2;
+add_five($num);
+echo $num;
+?>
+
+</body>
+</html>
+7
+
+
+PHP Arrays
+1) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$cars = array("Volvo", "BMW", "Toyota"); 
+echo "I like " . $cars[0] . ", " . $cars[1] . " and " . $cars[2] . ".";
+?>
+
+</body>
+</html>
+I like Volvo, BMW and Toyota.
+
+2) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$cars = array("Volvo", "BMW", "Toyota");
+echo count($cars);
+?>
+
+</body>
+</html>
+3
+
+3) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$cars = array("Volvo", "BMW", "Toyota"); 
+echo "I like " . $cars[0] . ", " . $cars[1] . " and " . $cars[2] . ".";
+?>
+
+</body>
+</html>
+I like Volvo, BMW and Toyota.
+
+4) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$cars = array("Volvo", "BMW", "Toyota");
+$arrlength = count($cars);
+
+for($x = 0; $x < $arrlength; $x++) {
+  echo $cars[$x];
+  echo "<br>";
+}
+?>
+
+</body>
+</html>
+Volvo
+Bmw
+Toyota
+
+5) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+echo "Peter is " . $age['Peter'] . " years old.";
+?>
+
+</body>
+</html>
+Peter is 35 years old.
+
+6) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+
+foreach($age as $x => $x_value) {
+  echo "Key=" . $x . ", Value=" . $x_value;
+  echo "<br>";
+}
+?>
+
+</body>
+</html>
+Key=Peter, Value=35
+Key=Ben, Value=37
+Key=Joe, Value=43
+
+7)<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$cars = array (
+  array("Volvo",22,18),
+  array("BMW",15,13),
+  array("Saab",5,2),
+  array("Land Rover",17,15)
+);
+  
+echo $cars[0][0].": In stock: ".$cars[0][1].", sold: ".$cars[0][2].".<br>";
+echo $cars[1][0].": In stock: ".$cars[1][1].", sold: ".$cars[1][2].".<br>";
+echo $cars[2][0].": In stock: ".$cars[2][1].", sold: ".$cars[2][2].".<br>";
+echo $cars[3][0].": In stock: ".$cars[3][1].", sold: ".$cars[3][2].".<br>";
+?>
+
+</body>
+</html>
+Volvo: In stock: 22, sold: 18.
+BMW: In stock: 15, sold: 13.
+Saab: In stock: 5, sold: 2.
+Land Rover: In stock: 17, sold: 15.
+
+8) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$cars = array (
+  array("Volvo",22,18),
+  array("BMW",15,13),
+  array("Saab",5,2),
+  array("Land Rover",17,15)
+);
+    
+for ($row = 0; $row < 4; $row++) {
+  echo "<p><b>Row number $row</b></p>";
+  echo "<ul>";
+  for ($col = 0; $col < 3; $col++) {
+    echo "<li>".$cars[$row][$col]."</li>";
+  }
+  echo "</ul>";
+}
+?>
+
+</body>
+</html>
+Row number 0
+Volvo
+22
+18
+
+Row number 1
+BMW
+15
+13
+
+Row number 2
+Saab
+5
+2
+
+Row number 3
+Land Rover
+17
+15
+
+9) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$cars = array("Volvo", "BMW", "Toyota");
+sort($cars);
+
+$clength = count($cars);
+for($x = 0; $x < $clength; $x++) {
+  echo $cars[$x];
+  echo "<br>";
+}
+?>
+
+</body>
+</html>
+BMW
+Toyota
+Volvo
+
+10) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$numbers = array(4, 6, 2, 22, 11);
+sort($numbers);
+
+$arrlength = count($numbers);
+for($x = 0; $x < $arrlength; $x++) {
+  echo $numbers[$x];
+  echo "<br>";
+}
+?>
+
+</body>
+</html>
+2
+4
+6
+11
+22
+
+11) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$cars = array("Volvo", "BMW", "Toyota");
+rsort($cars);
+
+$clength = count($cars);
+for($x = 0; $x < $clength; $x++) {
+  echo $cars[$x];
+  echo "<br>";
+}
+?>
+
+</body>
+</html>
+Volvo 
+Toyota
+BMW
+
+12) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$numbers = array(4, 6, 2, 22, 11);
+rsort($numbers);
+
+$arrlength = count($numbers);
+for($x = 0; $x < $arrlength; $x++) {
+  echo $numbers[$x];
+  echo "<br>";
+}
+?>
+
+</body>
+</html>
+22
+11
+6
+4
+2
+
+13) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+asort($age);
+
+foreach($age as $x => $x_value) {
+  echo "Key=" . $x . ", Value=" . $x_value;
+  echo "<br>";
+}
+?>
+
+</body>
+</html>
+Key=Peter, Value=35
+Key=Ben, Value=37
+Key=Joe, Value=43
+
+14) <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+ksort($age);
+
+foreach($age as $x => $x_value) {
+  echo "Key=" . $x . ", Value=" . $x_value;
+  echo "<br>";
+}
+?>
+
+</body>
+</html>
+Key=Ben, Value=37
+Key=Joe, Value=43
+Key=Peter, Value=35
+
+ 
+
+
